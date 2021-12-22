@@ -1,5 +1,5 @@
-# mars-rover-problem
-This repo contains my personal solution of the Mars rover problem. 
+# mars-rover-problem :milky_way:
+This repo contains my personal solution of the Mars rover problem. :earth_africa:
 
 ## The problem:
 You’re part of the team that explores Mars by sending remotely controlled vehicles to the surface of the planet. Develop an API that translates the commands sent from earth to instructions that are understood by the rover.
