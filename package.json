@@ -1,0 +1,20 @@
+{
+  "name": "mars-rover-problem",
+  "version": "1.0.0",
+  "description": "This repo contains my personal solution of the Mars rover problem. :earth_africa:",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaScheggia/mars-rover-problem.git"
+  },
+  "author": "Donata Casalini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaScheggia/mars-rover-problem/issues"
+  },
+  "homepage": "https://github.com/LaScheggia/mars-rover-problem#readme"
+}
