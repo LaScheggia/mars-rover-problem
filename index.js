@@ -1,5 +1,5 @@
 "use strict";
-const Rover = require("./src/rover.js");
+const Rover = require("./src/rover");
 
 const map = [
   [false, false, false],
@@ -10,11 +10,17 @@ const map = [
 const initialX = 0;
 const initialY = 0;
 const initialH = "N";
-const commands = ["C", "C", "F", "F", "A", "F"];
+
+const commandsGood = ["C", "C", "F", "F", "A", "F"];
+const commandsBad = ["C", "C", "F", "F", "A", "F", "F"];
+const testCommands = [commandsGood, commandsBad];
 
 console.log("Using map:", map);
 console.log("Initial position: [", initialX, ", ", initialY, ", ", initialH, "]");
-console.log("Using commands:", commands);
 
-const rover = new Rover(map, initialX, initialY, initialH, true);
-rover.sendCommands(commands);
+testCommands.forEach(commands => {
+  console.log("Using commands:", commands);
+
+  const rover = new Rover(map, initialX, initialY, initialH, true);
+  rover.sendCommands(commands);
+});

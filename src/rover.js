@@ -18,6 +18,14 @@ class Rover {
       throw new Error("Invalid initial position");
     }
 
+    let rowLength;
+    map.forEach(row => {
+      if (!rowLength) rowLength = row.length;
+      else if (row.length !== rowLength) {
+        throw new Error("Each row must have the same lenght!");
+      }
+    });
+
     this.map = map;
     this.x = x;
     this.y = y;
@@ -66,18 +74,28 @@ class Rover {
           console.error(`I have found an obstacle in position: [${newX}, ${newY}, ${HEADINGS[this.h]}]`);
           console.error(`Backtracking to position: [${this.x}, ${this.y}, ${HEADINGS[this.h]}]`);
           console.error("Aborting commands sequence");
-          throw new Error("Obstacle found");
+          break;
         } else {
           this.x = newX;
           this.y = newY;
 
           if (this.debug) {
-            console.log("My new position is: [", this.x, ",", this.y, ",", HEADINGS[this.h], "]");
+            console.log(`My new position is: [${this.x}, ${this.y}, ${HEADINGS[this.h]}]`);
           }
         }
       } else {
-        throw new Error("Invalid command");
+        throw new Error("Invalid command:", command);
       }
+    }
+
+    if (this.debug) {
+      console.log(`My final position is: [${this.x}, ${this.y}, ${HEADINGS[this.h]}]`);
+    }
+
+    return {
+      x: this.x,
+      y: this.y,
+      h: HEADINGS[this.h],
     }
   }
 
